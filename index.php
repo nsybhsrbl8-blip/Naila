@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -14,9 +15,13 @@
 
 <!-- شريط التنقل -->
 <nav class="navbar">
-    <a href="index.html">الرئيسية</a>
-    <a href="login.html">تسجيل الدخول</a>
-    <a href="contact.html">اتصل بنا</a>
+    <a href="index.php">الرئيسية</a>
+    <?php if(isset($_SESSION['user'])): ?>
+        <a href="logout.php">خروج</a>
+    <?php else: ?>
+        <a href="login.php">تسجيل الدخول</a>
+    <?php endif; ?>
+    <a href="contact.php">اتصل بنا</a>
 </nav>
 
 <div class="app">
@@ -93,7 +98,7 @@ placeholder="اكتبي اسم المادة... مثال: قواعد البيان
 جلسة جديدة
 </button>
 
-<button onclick="location.href='contact.html'">
+<button onclick="location.href='contact.php'">
 تواصل معنا
 </button>
 
