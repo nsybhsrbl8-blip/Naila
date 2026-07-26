@@ -1,0 +1,34 @@
+CREATE DATABASE na_database;
+
+USE na_database;
+
+
+CREATE TABLE users (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    name VARCHAR(100) NOT NULL,
+
+    email VARCHAR(150) UNIQUE NOT NULL,
+
+    password VARCHAR(255) NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+);
+
+
+
+CREATE TABLE contacts (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    name VARCHAR(100),
+
+    email VARCHAR(150),
+
+    message TEXT,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+);
